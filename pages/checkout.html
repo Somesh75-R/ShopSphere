@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopSphere - Checkout</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>ShopSphere</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="cart.html">
+        Cart <span id="cart-count" style="background-color:red;color:white;border-radius:50%;padding:2px 6px;font-size:14px">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Checkout</h2>
+
+    <section>
+      <h3>Order Summary</h3>
+      <div id="order-summary"></div>
+    </section>
+
+    <hr/>
+
+    <section>
+      <h3>Delivery Details</h3>
+      <form id="checkout-form">
+        <label for="name">Full Name:</label><br/>
+        <input type="text" id="name" name="name" required><br/><br/>
+
+        <label for="address">Address:</label><br/>
+        <textarea id="address" name="address" required></textarea><br/><br/>
+
+        <label for="email">Email:</label><br/>
+        <input type="email" id="email" name="email" required><br/><br/>
+
+        <label for="payment">Payment Method:</label><br/>
+        <select id="payment" name="payment" required>
+          <option value="">--Select--</option>
+          <option value="cod">Cash on Delivery</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="upi">UPI</option>
+        </select><br/><br/>
+
+        <button type="submit" class="btn-checkout">Place Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShopSphere. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>

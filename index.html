@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShopSphere</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo"><img src="../ShopSphere/images/shopsphere.jpg" alt="logoimg"></div>
+
+    <div class="search-box">
+      <select>
+      <option value="all">All</option>
+      <option value="electronics">Electronics</option>
+      <option value="fashion">Fashion</option>
+      <option value="home">Home</option>
+      </select>
+      <input type="text" placeholder="Search ShopSphere...">
+      <button>🔍</button>
+    </div>
+
+    <nav class="nav-link">
+      <a href="index.html">Home</a>
+      <a href="pages/cart.html" class="cart-link">🛒
+        <span id="cart-count" style="background-color:red;color:white;border-radius:50%;padding:2px 6px;font-size:14px">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our Products</h2>
+    <div class="items-container"></div>
+  </main>
+
+  <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+  <footer>
+    <p>&copy; 2025 ShopSphere. All rights reserved.</p>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/items.js" defer></script>
+</body>
+</html>
