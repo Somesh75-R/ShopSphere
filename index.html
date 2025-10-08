@@ -28,10 +28,14 @@
     </nav>
 
     <div class="mini-cart">
+      <button class="mini-cart-close"></button>
       <h4>Your Cart</h4>
       <div class="mini-cart-items"></div>
       <p class="mini-cart-total">Total: ₹0</p>
-      <a href="pages/cart.html" class="view-cart-btn">View Cart</a>
+      <button onclick="window.location.href='pages/cart.html'">View Cart</button>
+      <button onclick="window.location.href='pages/checkout.html'">Checkout</button>
+      
+      <div class="toast-container"></div>
     </div>
   </header>
 
@@ -47,7 +51,6 @@
   </footer>
 
   <script src="js/items.js"></script>
-  <script src="js/cart.js"></script>
   <script src="js/common.js"></script>
   <script src="js/mini-cart-extended.js"></script>
   
