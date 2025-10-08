@@ -46,3 +46,8 @@ itemsContainer.addEventListener("click", e => {
     
   }
 });
+
+
+// After adding item to cart
+const event = new Event("cartUpdated");
+document.dispatchEvent(event);

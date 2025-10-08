@@ -129,6 +129,7 @@ main {
 }
 
 .mini-cart {
+  display: none;
   position: absolute;
   top: 60px; /* header ke neeche */
   right: 10px;
@@ -137,8 +138,11 @@ main {
   border: 1px solid #ccc;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
   padding: 10px;
-  display: none; /* initially hidden */
   z-index: 100;
+}
+
+.mini-cart.active { 
+  display: block; 
 }
 
 .mini-cart-items {
