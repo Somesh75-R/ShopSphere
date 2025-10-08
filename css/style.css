@@ -127,3 +127,47 @@ main {
 .cart-link {
    font-size: 30px;
 }
+
+.mini-cart {
+  position: absolute;
+  top: 60px; /* header ke neeche */
+  right: 10px;
+  width: 250px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  padding: 10px;
+  display: none; /* initially hidden */
+  z-index: 100;
+}
+
+.mini-cart-items {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.mini-cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.mini-cart-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.view-cart-btn {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  background: #ff3f6c;
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
