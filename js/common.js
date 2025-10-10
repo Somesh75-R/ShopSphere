@@ -1,38 +1,37 @@
-function updateCartCount() {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartCountE1 = document.getElementById("cart-count");
-  if(cartCountE1) {
-    let totalItems = 0;
-    cart.forEach(item => totalItems += item.qty);
-    cartCountE1.textContent = totalItems;
+function getCart() {
+  try {
+    const data = localStorage.getItem("cart");
+    if (!data || data === "undefined") return [];
+    return JSON.parse(data);
+  } catch (e) {
+    console.warn("Corrupted cart data, resetting...");
+    localStorage.removeItem("cart");
+    return [];
   }
 }
 
+function saveCart(cart) {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCartCount() {
+  const cart = getCart();
+  const cartCountEl = document.getElementById("cart-count");
+  if (cartCountEl) {
+    const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+    cartCountEl.textContent = totalItems;
+  }
+}
 
 function showToast(message, duration = 2000) {
   const container = document.getElementById("toast-container");
-  if(!container) return;
-
+  if (!container) return;
   const toast = document.createElement("div");
+  toast.className = "toast";
   toast.textContent = message;
-  toast.style.background = "#333";
-  toast.style.color = "#fff";
-  toast.style.padding = "10px 20px";
-  toast.style.marginTop = "10px";
-  toast.style.borderRadius = "5px";
-  toast.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
-  toast.style.opacity = "0";
-  toast.style.transition = "opacity 0.3s";
-
   container.appendChild(toast);
-
-  // Fade in
-  setTimeout(()=> toast.style.opacity = "1", 50);
-
-  // Remove after duration
-  setTimeout(()=>{
-    toast.style.opacity = "0";
-    setTimeout(()=> container.removeChild(toast), 300);
-  }, duration);
+  setTimeout(() => toast.classList.add("hide"), duration);
+  setTimeout(() => toast.remove(), duration + 500);
 }
+
 updateCartCount();

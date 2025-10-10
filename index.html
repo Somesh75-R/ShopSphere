@@ -7,14 +7,14 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo"><img src="../ShopSphere/images/shopsphere.jpg" alt="logoimg"></div>
+    <div class="logo"><img src="images/shopsphere.jpg" alt="logoimg"></div>
 
     <div class="search-box">
       <select>
-      <option value="all">All</option>
-      <option value="electronics">Electronics</option>
-      <option value="fashion">Fashion</option>
-      <option value="home">Home</option>
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="home">Home</option>
       </select>
       <input type="text" placeholder="Search ShopSphere...">
       <button>🔍</button>
@@ -28,14 +28,12 @@
     </nav>
 
     <div class="mini-cart">
-      <button class="mini-cart-close"></button>
+      <button class="mini-cart-close">X</button>
       <h4>Your Cart</h4>
       <div class="mini-cart-items"></div>
       <p class="mini-cart-total">Total: ₹0</p>
       <button onclick="window.location.href='pages/cart.html'">View Cart</button>
       <button onclick="window.location.href='pages/checkout.html'">Checkout</button>
-      
-      <div class="toast-container"></div>
     </div>
   </header>
 
@@ -44,15 +42,14 @@
     <div class="items-container"></div>
   </main>
 
-  <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+  <div id="toast-container" class="toast-container"></div>
 
   <footer>
     <p>&copy; 2025 ShopSphere. All rights reserved.</p>
   </footer>
 
-  <script src="js/items.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/items.js"></script>
   <script src="js/mini-cart-extended.js"></script>
-  
 </body>
 </html>
